@@ -1,0 +1,157 @@
+import { dateForDay, todayKey } from '../utils/time'
+
+const photo = (name) => `${import.meta.env.BASE_URL}photos/${name}`
+
+// First memories, pre-loaded so the wall is never empty.
+// Dates are placeholders (except the 1 October one, which is stamped on the photo),
+// so edit them inside the app: tap a photo, then the pencil.
+const day = (n) => todayKey(dateForDay(n))
+
+export function getSeedMemories() {
+  return [
+    {
+      id: 'seed-upside',
+      photo: photo('upside.jpg'),
+      caption: 'Upside-down selfie, hands over eyes, little pink hearts floating by.',
+      date: day(10),
+      location: '',
+      feeling: 'Giggly 🙈',
+    },
+    {
+      id: 'seed-laugh',
+      photo: photo('laugh.jpg'),
+      caption: 'Cheek to cheek, mid-scream, zero filter on the laughing.',
+      date: day(10),
+      location: '',
+      feeling: 'Laughing way too hard 😂',
+    },
+    {
+      id: 'seed-sunset',
+      photo: photo('sunset.jpg'),
+      caption: 'Laughing in the golden hour, sunset behind her and the Enfield beside her.',
+      date: day(9),
+      location: '',
+      feeling: 'Happy, and a little bit speechless 🌅',
+    },
+    {
+      id: 'seed-hearts2',
+      photo: photo('hearts2.jpg'),
+      caption: 'Heads together under the lights, hearts floating over us.',
+      date: day(9),
+      location: '',
+      feeling: 'Warm all over 🥰',
+    },
+    {
+      id: 'seed-hearts1',
+      photo: photo('hearts1.jpg'),
+      caption: 'Tilted world, tired eyes, and a lot of pink hearts.',
+      date: day(8),
+      location: '',
+      feeling: 'Cozy 🤍',
+    },
+    {
+      id: 'seed-flare',
+      photo: photo('flare.jpg'),
+      caption: 'Light streaks in her hair and a smile hiding behind her hand.',
+      date: day(8),
+      location: '',
+      feeling: 'Shy and shining ✨',
+    },
+    {
+      id: 'seed-dogfilter',
+      photo: photo('dogfilter.jpg'),
+      caption: 'Dog-ear filters, zero dignity, full smiles.',
+      date: day(7),
+      location: '',
+      feeling: 'Silly 🐶',
+    },
+    {
+      id: 'seed-night',
+      photo: photo('night.jpg'),
+      caption: 'Head on her hand, that late-night smile.',
+      date: day(7),
+      location: '',
+      feeling: 'Calm. Like I could stay a while 🌙',
+    },
+    {
+      id: 'seed-cave',
+      photo: photo('cave.jpg'),
+      caption: 'Scarf over her head, torchlight on the stone walls, hand hiding a smile.',
+      date: day(6),
+      location: '',
+      feeling: 'Little bit shy 🙈',
+    },
+    {
+      id: 'seed-pout',
+      photo: photo('pout.jpg'),
+      caption: 'A dramatic pout, a hand on a chin, and soft light. Bakchodi level: high.',
+      date: day(6),
+      location: '',
+      feeling: 'Playful 😝',
+    },
+    {
+      id: 'seed-flower',
+      photo: photo('flower.jpg'),
+      caption: 'A frangipani tucked behind her ear. Hard to look anywhere else.',
+      date: day(5),
+      location: '',
+      feeling: 'Quietly smitten 🌼',
+    },
+    {
+      id: 'seed-hands',
+      photo: photo('hands.jpg'),
+      caption: 'Palms side by side, and an evil-eye bracelet keeping watch.',
+      date: day(4),
+      location: '',
+      feeling: 'Soft, small moment 🧿',
+    },
+    {
+      id: 'seed-plaid',
+      photo: photo('plaid.jpg'),
+      caption: '1 October. Black and white, a plaid shirt and a little evil-eye charm.',
+      date: day(3),
+      location: '',
+      feeling: 'Quiet and close 🧿',
+    },
+    {
+      id: 'seed-eye',
+      photo: photo('eye.jpg'),
+      caption: 'Way too close, on purpose. One curious eye.',
+      date: day(3),
+      location: '',
+      feeling: 'Curious 👀',
+    },
+    {
+      id: 'seed-mural',
+      photo: photo('mural.jpg'),
+      caption: 'Empty plates, a stone-chariot mural, and a head resting on a shoulder.',
+      date: day(2),
+      location: '',
+      feeling: 'Comfortable 😌',
+    },
+    {
+      id: 'seed-garden',
+      photo: photo('garden.jpg'),
+      caption: 'Golden hour, green leaves behind us and both of us properly smiling.',
+      date: day(1),
+      location: '',
+      feeling: 'Happy, a little nervous 🌿',
+    },
+    {
+      id: 'seed-dark',
+      photo: photo('dark.jpg'),
+      caption: 'Almost no light. Just an eye, a smile and a quiet night.',
+      date: day(1),
+      location: '',
+      feeling: 'Sleepy 😴',
+    },
+    {
+      id: 'seed-bw',
+      photo: photo('bw.jpg'),
+      caption: 'Blurry black and white, a hand sneaking into the frame.',
+      date: day(2),
+      location: '',
+      feeling: 'Mysterious 😏',
+    },
+  ]
+}

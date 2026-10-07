@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply font-sans text-ink antialiased bg-cream;
+    margin: 0;
+    overflow-x: hidden;
+    min-height: 100dvh;
+    overscroll-behavior-y: none;
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+  }
+  img {
+    -webkit-user-drag: none;
+  }
+  ::selection {
+    background: rgba(224, 89, 122, 0.25);
+  }
+  /* iOS zooms into inputs under 16px */
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/55 backdrop-blur-xl border border-white/70 shadow-glass rounded-3xl;
+  }
+  .glass-strong {
+    @apply bg-white/80 backdrop-blur-2xl border border-white/80 shadow-glass;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 min-h-[48px] px-6 rounded-full font-medium
+      transition active:scale-[0.97] select-none disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-primary {
+    @apply btn text-white shadow-soft;
+    background: linear-gradient(135deg, #e0597a 0%, #b3263e 55%, #7a4cc0 130%);
+  }
+  .btn-primary:hover {
+    filter: brightness(1.06);
+  }
+  .btn-ghost {
+    @apply btn bg-white/60 text-wine border border-rose/30 hover:bg-white/90;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 min-h-[44px] px-4 rounded-full border border-rose/25 bg-white/60
+      text-sm text-ink transition active:scale-[0.97] hover:bg-white/90;
+  }
+  .chip-on {
+    @apply bg-gradient-to-br from-rose to-wine text-white border-transparent shadow-soft hover:bg-none;
+  }
+  .field {
+    @apply w-full rounded-2xl bg-white/70 border border-rose/20 px-4 py-3 text-ink placeholder:text-mute/70
+      outline-none transition focus:border-rose/60 focus:ring-4 focus:ring-rose/10;
+  }
+  .eyebrow {
+    @apply font-hand text-2xl text-rose leading-none;
+  }
+  .caret {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    margin-left: 2px;
+    vertical-align: -0.12em;
+    background: currentColor;
+    @apply animate-caret;
+  }
+  .paper {
+    background-color: #fffdf7;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 33px,
+      rgba(224, 89, 122, 0.14) 33px,
+      rgba(224, 89, 122, 0.14) 34px
+    );
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
